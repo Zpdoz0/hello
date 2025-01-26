@@ -32,11 +32,9 @@ function write(arr) {
   text.textContent = '';
   const count = arr.length;
   document.documentElement.style.setProperty('--count', count);
-  document.getElementById('tecla').volume = 1;
   let i = 0;
   const print = setInterval(() => {
     text.textContent += arr[i];
-    document.getElementById('tecla').currentTime = 0;
     document.getElementById('tecla').play();
     i++;
     if (i === arr.length || run === false) {
