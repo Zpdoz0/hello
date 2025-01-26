@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
+    <script type="text/javascript">
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("sw.js");
+        }
+    </script>
+</head>
+<body>
+    <header class="container_head">
+        <div class="container_menu">
+            <div class="cont_logo">
+                <a href="#msg" class="logo" id="prank">
+                    <img src="hello.webp" alt="" class="logo img">
+                </a>
+                <a href="frame.html" target="_blank" class="logo_fake">
+                    <img src="angry.webp" alt="" class="logo_fake img">
+                </a>
+                <span class="text_logo">Happy</span>
+                <span class="text_logo_fake">I'm Angry</span>
+            </div>
+            
+            <input type="checkbox" id="toggle">
+            <label for="toggle" class="cont_icon">
+                <div class="line_icon line_icon_one"></div>
+                <div class="line_icon line_icon_two"></div>
+                <div class="line_icon line_icon_three"></div>
+            </label>
+            
+        </div>
+        <nav class="cont_dropdown">
+            <ul class="dropdown">
+                <li class="dropdown_list">
+                    <a href="#msg" class="dropdown_link visi" id="pista">
+                        <img src="home.svg" alt="" class="dropdown_icon img">
+                        <p class="dropdown_section">Pista</p>
+                    </a>
+                    <a href="#msg" class="dropdown_link invi" id="pista2">
+                        <img src="home.svg" alt="" class="dropdown_icon img">
+                        <p class="dropdown_section">Pista</p>
+                    </a>
+                </li>
+                <div class="dropdown_list">
+                    <div class="dropdown_link">
+                        <img src="service2.svg" alt="" class="dropdown_icon img service_fake">
+                        <img src="service.svg" alt="" class="dropdown_icon img service">
+                        <p class="dropdown_section">Resuelve</p>
+                        <img src="arrow_down.svg" alt="" class="dropdown_arrow img">
+                        <input type="checkbox" class="dropdown_checkbox" id="toggle_two">
+                    </div>
+                    <div class="container_sub_dropdown">
+                        <ul class="sub_dropdown">
+                            <li class="sub_dropdown_li sub_li_fake">
+                                <a class="sub_dropdown_section dropdown_section sub_a_fake">log<sub>3</sub>(2x+1)=2 :</a> 
+                            </li>
+                            <li class="sub_dropdown_li">
+                                <a class="sub_dropdown_section dropdown_section visi" href="#msg" id="true">= 4</a>
+                                <a class="sub_dropdown_section dropdown_section invi" href="#msg" id="true2">=Error_death</a>  
+                            </li>
+                            <li class="sub_dropdown_li">
+                                <a class="sub_dropdown_section dropdown_section visi" href="#msg" id="false">= 6</a>
+                                <a class="sub_dropdown_section dropdown_section invi" href="#msg" id="false2">=Error_Die</a> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <li class="dropdown_list">
+                    <a href="#msg" class="dropdown_link visi" id="consejo">
+                        <img src="mobile.svg" alt="" class="dropdown_icon img">
+                        <p class="dropdown_section">Consejo</p>
+                    </a>
+                    <a href="#msg" class="dropdown_link invi" id="consejo2">
+                        <img src="mobile.svg" alt="" class="dropdown_icon img">
+                        <p class="dropdown_section">Consejo</p>
+                    </a>
+                </li>
+                <li class="dropdown_list">
+                    <a href="#msg" class="dropdown_link visi" id="secreto">
+                        <img src="map.svg" alt="" class="dropdown_icon img">
+                        <p class="dropdown_section">Secreto</p>
+                    </a>
+                    <a href="#msg" class="dropdown_link invi" id="secreto2">
+                        <img src="map.svg" alt="" class="dropdown_icon img">
+                        <p class="dropdown_section">Secreto</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container_main">
+        <input type="checkbox" id="check_day">
+        <label for="check_day" class="cont_happy">
+            <h1 class="happy_day" id="happy">Birthday</h1>
+        </label>
+        <input type="checkbox" id="check_whis">
+        <label for="check_whis" class="cont_whis">
+            <h1 class="happy_day_fake" id="sad">Whisper</h1>
+        </label>
+        <audio src="omfg_hello.mp3" id="musica"></audio>
+        <audio src="lavanda.mp3" id="musica_two"></audio>
+    </main>
+    <div class="container_msg" id="msg">
+        <div class="cont_msg_exit">
+            <a href="#" class="msg_exit">
+                <div class="line_icon msg_line_one"></div>
+                <div class="line_icon msg_line_two"></div>
+                <div class="line_fake" id="exit"></div>
+            </a>
+            <p class="title_exit">MSG_CIFRADO</p>   
+        </div>
+        <div class="cont_msg_text">
+            <p class="msg_text" id="msg_text"></p>
+            <span class="pixel pixel_one"></span>
+            <span class="pixel pixel_two"></span> 
+            <span class="pixel pixel_three"></span>
+            <span class="pixel pixel_four"></span>
+            <audio src="tecla2.mp3" id="tecla"></audio>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

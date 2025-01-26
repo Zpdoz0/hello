@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Prank</title>
+    <style>
+        :root {
+            --size_head: 90px;
+        }
+        @font-face {
+            font-family: 'cartel';
+            src: url(PlaywriteIN-Regular.woff2) format("woff2");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'orbi';
+            src: url(Orbitron-Regular.woff2) format("woff2");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'monaco';
+            src: url(monaco.woff2) format("woff2");
+            font-display: swap;
+        }
+
+        .content {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .secret {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #fff;
+            right: 0;
+            bottom: 0;
+        }
+
+        .line_icon {
+            position: absolute;
+            will-change: transform, rotate;
+            height: 3px;
+            width: 35px;
+            border-radius: 10px;
+            background-color: beige;
+            transition: all .4s ease;
+        }
+
+        body:has( :target) {
+        --opacity: 1;
+        --events: all;
+
+        /*custom MSG*/
+
+        --blink: blink;
+        --name1: pixel_one;
+        --name4: pixel_four;
+        --name2: pixel_two;
+        --name3: pixel_three;
+    }
+
+        .container_msg {
+            display: grid;
+            grid-template-rows: var(--size_head) 1fr;
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: #072636;
+            z-index: 4;
+            overflow: hidden;
+            pointer-events: var(--events,none);
+            opacity: var(--opacity, 0);
+            transition: opacity .3s;
+        }
+
+        .cont_msg_exit {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            height: var(--size_head);
+            width: 85%;
+            margin: 0px auto;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .cont_msg_exit::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 100%;
+            height: var(--size_head);
+            background-color: #0a4664;
+            box-shadow: 0px 2px 10px #0000007e;
+        }
+
+        .title_exit {
+            position: relative;
+            font-family: 'orbi';
+            font-size: 30px;
+            color: #fff;
+            text-shadow: 2px 2px 6px rgb(0, 255, 242);
+            margin: 0px;  
+        }
+
+        .msg_exit {
+            display: grid;
+            position: relative;
+            width: 35px;
+            height: 25px;
+        }
+
+        .msg_line_one {
+            top: 11px;
+            rotate: 40deg;
+        }
+
+        .msg_line_two {
+            rotate: -40deg;
+            bottom: 11px;
+        }
+
+        .line_fake {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cont_msg_text {
+            position: relative;
+            width: 85%;
+            margin: 30px auto;
+            padding: 20px 0;
+            overflow: auto;
+        }
+
+
+        .msg_text {
+            display: inline;
+            font-family: 'monaco';
+            font-size: 48px;
+            line-height: 35px;
+            color: #ffffff;
+            word-spacing: 10px;
+            font-weight: 40;
+        }
+
+        .msg_text::after{
+            content: '';
+            padding-left: 5px;
+            border-right: 6px solid #00c3ffc2;
+            opacity: .5;
+            animation: var(--blink, none) 0.75s infinite step-end;
+        }
+
+        @keyframes blink {
+            50% {border-color: transparent;}
+        }
+
+        .pixel {
+            will-change: transform;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #1cdeec;
+            transform: translateX(-15px);
+            opacity: 0;
+        }
+
+        .pixel_one {
+            animation: var(--name1, none) 200ms var(--count) ease-in-out;
+        }
+
+        .pixel_four {
+            background-color: #26b1cc;
+            animation: var(--name4, none) 200ms var(--count) ease-in-out;
+            
+        }
+
+        .pixel_two {
+            background-color: #0162aa;
+            animation: var(--name2, none) 200ms var(--count) ease-in-out;
+            
+        }
+
+        .pixel_three {
+            background-color: #0173bd;
+            animation: var(--name3, none) 200ms var(--count) ease-in-out;
+            
+        }
+
+        @keyframes pixel_four {
+            to {
+                opacity: .8;
+                transform: translateY(-14px) translateX(-10px) rotate(-140deg) scale(1);
+            }
+        }
+
+        @keyframes pixel_one {
+            to {
+                opacity: .8;
+                transform: translateY(-9px) translateX(2px) rotate(140deg) scale(.6);
+            }
+        }
+
+        @keyframes pixel_two {
+            to {
+                opacity: .8;
+                transform: translateY(1px) translateX(6px) rotate(55deg) scale(.9);
+            }
+        }
+
+        @keyframes pixel_three {
+            to {
+                opacity: .8;
+                transform: translateY(-5px) translateX(-21px) rotate(-55deg) scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <iframe id="ifr" width="100%" height="100%" src="miedo.mp4" 
+        frameborder="0" allow="accelerometer; autoplay = 0; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+        </iframe>
+    </div>
+    <a class="secret" id="secret" href="#msg"></a>
+    <div class="container_msg" id="msg">
+        <div class="cont_msg_exit">
+            <a href="#" class="msg_exit">
+                <div class="line_icon msg_line_one"></div>
+                <div class="line_icon msg_line_two"></div>
+                <div class="line_fake" id="exit"></div>
+            </a>
+            <p class="title_exit">MSG_CIFRADO</p>   
+        </div>
+        <div class="cont_msg_text">
+            <p class="msg_text" id="msg_text"></p>
+            <span class="pixel pixel_one"></span>
+            <span class="pixel pixel_two"></span> 
+            <span class="pixel pixel_three"></span>
+            <span class="pixel pixel_four"></span>
+            <audio src="tecla2.mp3" id="tecla"></audio>
+        </div>
+    </div>
+    <script src="secret.js"></script>
+</body>
+</html>
