@@ -33,8 +33,10 @@ function write(arr) {
   const count = arr.length;
   document.documentElement.style.setProperty('--count', count);
   let i = 0;
+  document.getElementById('tecla').volume = 0.35;
   const print = setInterval(() => {
     text.textContent += arr[i];
+    document.getElementById('tecla').currentTime = 0;
     document.getElementById('tecla').play();
     i++;
     if (i === arr.length || run === false) {
